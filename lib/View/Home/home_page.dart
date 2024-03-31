@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_weather_app/Resources/Colors/colors.dart';
 import 'package:my_weather_app/View/Home/Componants/app_bar.dart';
+import 'package:my_weather_app/View/Home/Componants/info_cart.dart';
+import 'package:my_weather_app/View/Home/Componants/location.dart';
 import 'package:my_weather_app/ViewModel/Controllers/home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,13 +24,21 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                CustomAppBar(),
+                const CustomAppBar(),
+                const SizedBox(
+                  height: 20,
+                ),
+                Location(),
+                Hero(tag: "TAG", child: Material(  
+                  color: Colors.transparent,
+                  child: InfoCart(),
+                )),
               ],
             ),
           ),
